@@ -249,7 +249,7 @@ function Chat({ope_id}) {
     //         'Accept':'application/json'
     //     }
     // })
-       await axios.post (`http://localhost/api/join-room?room_id=${room_id}`,{api_token},{csrf_token})
+       await axios.post (`https://hawayu2.herokuapp.com/api/join-room?room_id=${room_id}`,{api_token},{csrf_token})
     .then((response)=>{
         console.log(response)
         // location.href = "/chatpage?roomid="+room_id;
@@ -265,7 +265,7 @@ function Chat({ope_id}) {
         //保健師が対応中のルーム一覧を取得
         const onClickWip = async()=>{
         const operator_id = ope_id
-            await axios.get(`http://localhost/api/wip?api_token=${api_token}`,{csrf_token})
+            await axios.get(`https://hawayu2.herokuapp.com/api/wip?api_token=${api_token}`,{csrf_token})
         .then((response)=>{
             console.log("wipData",response.data)
             setWipRoom(response.data)
